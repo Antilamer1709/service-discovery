@@ -57,3 +57,4 @@ client2/target/generated-sources/
 client2/target/generated-test-sources/
 gateway/target/generated-sources/
 gateway/target/generated-test-sources/
+.idea/**
