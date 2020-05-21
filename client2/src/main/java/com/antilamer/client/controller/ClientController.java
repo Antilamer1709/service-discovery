@@ -2,6 +2,7 @@ package com.antilamer.client.controller;
 
 import com.netflix.discovery.EurekaClient;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +19,7 @@ public class ClientController {
         return new RestTemplate();
     }
 
+    @Qualifier("eurekaClient")
     @Autowired
     private EurekaClient discoveryClient;
 
