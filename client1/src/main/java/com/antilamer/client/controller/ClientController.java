@@ -12,7 +12,6 @@ public class ClientController {
     @GetMapping("/{userId}")
     public String getClient(@PathVariable long userId) {
         return "client1; userId " + userId;
-
     }
 
 }
