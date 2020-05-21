@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("api/client")
+@RequestMapping("api/client1")
 public class ClientController {
 
     @GetMapping("/{userId}")
     public String getClient(@PathVariable long userId) {
-        return "client";
+        return "client1";
 
     }
 
