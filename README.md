@@ -2,7 +2,7 @@
 
 ### Gateways
 
-There are 2 gateway projects. Each of them uses EurekaServer and ZuulProxy modules.
+There are 2 gateway projects. Each of them uses `EurekaServer` and `ZuulProxy` modules.
 
 To run this example you have to edit your hosts file with:
 ````
