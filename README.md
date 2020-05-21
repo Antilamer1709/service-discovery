@@ -20,3 +20,8 @@ There are several examples
 - call a gateway with a `api/client1` or `api/client2` prefix to be proxied to an appropriate microservice
 - call a `api/client2/{userId}` which gets a `client1` address from a `discoveryClient`
 - upload files to `client2` which gets a `client1` address from a `discoveryClient` and passes files to the `client1` to be processed
+
+
+### Diagram
+
+![](assets/microservices.png)
