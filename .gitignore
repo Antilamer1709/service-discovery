@@ -2,6 +2,7 @@
 
 # compiled output
 /dist
+/target
 /tmp
 /out-tsc
 # Only exists if Bazel was run
@@ -22,6 +23,7 @@ speed-measure-plugin*.json
 *.launch
 .settings/
 *.sublime-workspace
+*.iml
 
 # IDE - VSCode
 .vscode/*
@@ -47,3 +49,11 @@ Thumbs.db
 
 ### Maven ###
 .mvn
+
+
+client1/target/generated-sources/
+client1/target/generated-test-sources/
+client2/target/generated-sources/
+client2/target/generated-test-sources/
+gateway/target/generated-sources/
+gateway/target/generated-test-sources/
