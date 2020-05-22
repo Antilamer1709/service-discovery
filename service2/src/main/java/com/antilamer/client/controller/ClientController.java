@@ -37,8 +37,8 @@ public class ClientController {
 
     @GetMapping("/{userId}")
     public String getClient(@PathVariable long userId) {
-        String url = discoveryClient.getNextServerFromEureka("client1", false).getHomePageUrl();
-        String firstClientResponse = restTemplate().getForEntity(url + "/v1/client1/" + userId, String.class).getBody();
+        String url = discoveryClient.getNextServerFromEureka("service1", false).getHomePageUrl();
+        String firstClientResponse = restTemplate().getForEntity(url + "/v1/service1/" + userId, String.class).getBody();
 
         return firstClientResponse + "_____      Service2;    Port: " + port + ";     UserId: " + userId;
     }
@@ -46,8 +46,8 @@ public class ClientController {
 
     @PostMapping("files/upload")
     public String upload(@RequestParam("files") MultipartFile[] files) throws IOException {
-        String url = discoveryClient.getNextServerFromEureka("client1", false).getHomePageUrl();
-        String serverUrl = url + "/v1/client1/files/upload";
+        String url = discoveryClient.getNextServerFromEureka("service1", false).getHomePageUrl();
+        String serverUrl = url + "/v1/service1/files/upload";
 
         HttpEntity<MultiValueMap<String, Object>> requestEntity = createRequestEntity(files);
 
