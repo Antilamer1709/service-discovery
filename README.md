@@ -1,6 +1,7 @@
 # Service discovery
 
 ## Gateways
+In real life you would have only one gateway app, but with different configs. Here, for the sake of example, are separated projects for every gateway. If you check it they differ only by their config file
 
 ### Front Gateway
 The Front Gateway is an entry point to the application. The purpose of this gateway is load balancing between gateways
