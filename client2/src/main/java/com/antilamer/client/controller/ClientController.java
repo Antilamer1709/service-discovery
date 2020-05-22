@@ -47,7 +47,7 @@ public class ClientController {
     @PostMapping("files/upload")
     public String upload(@RequestParam("files") MultipartFile[] files) throws IOException {
         String url = discoveryClient.getNextServerFromEureka("client1", false).getHomePageUrl();
-        String serverUrl = url + "/api/client1/files/upload";
+        String serverUrl = url + "/v1/client1/files/upload";
 
         HttpEntity<MultiValueMap<String, Object>> requestEntity = createRequestEntity(files);
 
