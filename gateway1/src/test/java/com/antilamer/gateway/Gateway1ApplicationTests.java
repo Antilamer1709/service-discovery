@@ -1,10 +1,10 @@
-package com.antilamer.client;
+package com.antilamer.gateway;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MicroserviceApplicationTests {
+class Gateway1ApplicationTests {
 
 	@Test
 	void contextLoads() {
