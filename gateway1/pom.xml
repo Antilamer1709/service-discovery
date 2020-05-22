@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.antilamer</groupId>
-	<artifactId>gateway2</artifactId>
+	<artifactId>gateway1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>gateway2</name>
-	<description>gateway2</description>
+	<name>gateway1</name>
+	<description>gateway1</description>
 
 	<properties>
 		<java.version>1.8</java.version>
