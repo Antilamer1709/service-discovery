@@ -19,14 +19,14 @@ To run this example you have to edit your hosts file with:
 
 Alternatively you can edit all of the config files to use other hosts (e.g. localhost).
 
-## Clients
-There are 2 client projects. They register themselves in the Gateways.
+## Services
+There are 2 service projects. Those microservices register themselves in the Gateways.
 
 ## Examples
 There are several use cases:
-- call a gateway with a `v1/client1` or `v1/client2` prefix to be proxied to an appropriate microservice (e.g. GET to http://front-gateway:8888/api/client1/v1/client1/123)
-- call a `v1/client2/{userId}` which gets a `client1` address from a `discoveryClient` (e.g. GET to http://front-gateway:8888/api/client2/v1/client2/123)
-- upload files to `client2` which gets a `client1` address from a `discoveryClient` and passes files to the `client1` to be processed (e.g. POST to http://front-gateway:8888/api/client2/v1/client2/files/upload)
+- call a gateway with a `v1/service1` or `v1/service2` prefix to be proxied to an appropriate microservice (e.g. GET to http://front-gateway:8888/api/service1/v1/service1/123)
+- call a `v1/service2/{userId}` which gets a `service1` address from a `discoveryClient` (e.g. GET to http://front-gateway:8888/api/service2/v1/service2/123)
+- upload files to `service2` which gets a `service1` address from a `discoveryClient` and passes files to the `service1` to be processed (e.g. POST to http://front-gateway:8888/api/service2/v1/service2/files/upload)
 
 
 ## Diagram

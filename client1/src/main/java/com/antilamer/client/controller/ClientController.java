@@ -9,7 +9,7 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 
 @RestController
-@RequestMapping("v1/client1")
+@RequestMapping("v1/service1")
 public class ClientController {
 
     @Value("${server.port}")
@@ -17,7 +17,7 @@ public class ClientController {
 
     @GetMapping("/{userId}")
     public String getClient(@PathVariable long userId) {
-        return "Client1;    Port: " + port + ";     UserId: " + userId;
+        return "Service1;    Port: " + port + ";     UserId: " + userId;
     }
 
 
