@@ -9,7 +9,7 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 
 @RestController
-@RequestMapping("api/client1")
+@RequestMapping("v1/client1")
 public class ClientController {
 
     @Value("${server.port}")

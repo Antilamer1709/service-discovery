@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 @RestController
-@RequestMapping("api/client2")
+@RequestMapping("v1/client2")
 public class ClientController {
 
     @Value("${server.port}")
@@ -38,7 +38,7 @@ public class ClientController {
     @GetMapping("/{userId}")
     public String getClient(@PathVariable long userId) {
         String url = discoveryClient.getNextServerFromEureka("client1", false).getHomePageUrl();
-        String firstClientResponse = restTemplate().getForEntity(url + "/api/client1/" + userId, String.class).getBody();
+        String firstClientResponse = restTemplate().getForEntity(url + "/v1/client1/" + userId, String.class).getBody();
 
         return firstClientResponse + "_____      Client2;    Port: " + port + ";     UserId: " + userId;
     }
