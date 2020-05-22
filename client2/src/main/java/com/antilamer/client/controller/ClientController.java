@@ -3,6 +3,7 @@ package com.antilamer.client.controller;
 import com.netflix.discovery.EurekaClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpEntity;
@@ -21,6 +22,9 @@ import java.io.InputStream;
 @RequestMapping("api/client2")
 public class ClientController {
 
+    @Value("${server.port}")
+    private String port;
+
     @Bean
     RestTemplate restTemplate() {
         return new RestTemplate();
@@ -36,7 +40,7 @@ public class ClientController {
         String url = discoveryClient.getNextServerFromEureka("client1", false).getHomePageUrl();
         String firstClientResponse = restTemplate().getForEntity(url + "/api/client1/" + userId, String.class).getBody();
 
-        return firstClientResponse + " client2; userId " + userId;
+        return firstClientResponse + "_____      Client2;    Port: " + port + ";     UserId: " + userId;
     }
 
 

@@ -1,5 +1,6 @@
 package com.antilamer.client.controller;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -11,9 +12,12 @@ import java.io.OutputStream;
 @RequestMapping("api/client1")
 public class ClientController {
 
+    @Value("${server.port}")
+    private String port;
+
     @GetMapping("/{userId}")
     public String getClient(@PathVariable long userId) {
-        return "client1; userId " + userId;
+        return "Client1;    Port: " + port + ";     UserId: " + userId;
     }
 
 
