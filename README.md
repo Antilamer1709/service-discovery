@@ -5,7 +5,9 @@
 ### Front Gateway
 The Front Gateway is an entry point to the application. The purpose of this gateway is load balancing between gateways
 
-### Gateways
+Navigate to http://front-gateway:8888 to see an Eureka dashboard
+
+### Service register gateways
 There are 2 gateway projects. Each of them uses `EurekaServer` and `ZuulProxy` modules. They are service registers of our microservices
 
 To run this example you have to edit your hosts file with:
