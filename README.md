@@ -23,6 +23,11 @@ Alternatively you can edit all of the config files to use other hosts (e.g. loca
 ## Services
 There are 2 service projects. Those microservices register themselves in the Gateways.
 
+### Registry
+If you have set up a `eureka.client.fetch-registry` to true, that's mean that your service has a local copy of a service register.
+Even if you turn off all your Eureka replicas, your microservices will be able to communicate between themselves.
+
+
 ## Examples
 There are several use cases:
 - call a gateway with a `v1/service1` or `v1/service2` prefix to be proxied to an appropriate microservice (e.g. GET to http://front-gateway:8888/api/service1/v1/service1/123)
