@@ -4,7 +4,6 @@ import com.netflix.discovery.EurekaClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -25,10 +24,8 @@ public class ClientController {
     @Value("${server.port}")
     private String port;
 
-    @Bean
-    RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
+    @Autowired
+    private RestTemplate restTemplate;
 
     @Qualifier("eurekaClient")
     @Autowired
@@ -38,7 +35,7 @@ public class ClientController {
     @GetMapping("/{userId}")
     public String getClient(@PathVariable long userId) {
         String url = discoveryClient.getNextServerFromEureka("service1", false).getHomePageUrl();
-        String firstClientResponse = restTemplate().getForEntity(url + "/v1/service1/" + userId, String.class).getBody();
+        String firstClientResponse = restTemplate.getForEntity(url + "/v1/service1/" + userId, String.class).getBody();
 
         return firstClientResponse + "_____      Service2;    Port: " + port + ";     UserId: " + userId;
     }
@@ -51,7 +48,7 @@ public class ClientController {
 
         HttpEntity<MultiValueMap<String, Object>> requestEntity = createRequestEntity(files);
 
-        return restTemplate().postForEntity(serverUrl, requestEntity, String.class).getBody();
+        return restTemplate.postForEntity(serverUrl, requestEntity, String.class).getBody();
     }
 
     private HttpEntity<MultiValueMap<String, Object>> createRequestEntity(MultipartFile[] files) throws IOException {
