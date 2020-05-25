@@ -16,7 +16,10 @@ public class ClientController {
     private String port;
 
     @GetMapping("/{userId}")
-    public String getClient(@PathVariable long userId) {
+    public String getClient(@PathVariable long userId) throws InterruptedException {
+        if (port.equals("8082")) {
+            Thread.sleep(3000);
+        }
         return "Service1;    Port: " + port + ";     UserId: " + userId;
     }
 
