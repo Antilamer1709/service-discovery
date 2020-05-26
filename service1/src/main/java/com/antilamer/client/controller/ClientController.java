@@ -18,14 +18,17 @@ public class ClientController {
     @GetMapping("/{userId}")
     public String getClient(@PathVariable long userId) throws InterruptedException {
         if (port.equals("8082")) {
-            Thread.sleep(3000);
+            Thread.sleep(7000);
         }
         return "Service1;    Port: " + port + ";     UserId: " + userId;
     }
 
 
     @PostMapping("files/upload")
-    public void upload(@RequestParam("files") MultipartFile[] files) {
+    public void upload(@RequestParam("files") MultipartFile[] files) throws InterruptedException {
+        if (port.equals("8082")) {
+            Thread.sleep(7000);
+        }
         String path = "D:\\fileStorage";
 
         for (MultipartFile file : files) {
