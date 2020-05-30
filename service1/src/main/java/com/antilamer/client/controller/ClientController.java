@@ -1,5 +1,6 @@
 package com.antilamer.client.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -8,6 +9,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 
+@Slf4j
 @RestController
 @RequestMapping("v1/service1")
 public class ClientController {
@@ -17,6 +19,7 @@ public class ClientController {
 
     @GetMapping("/{userId}")
     public String getClient(@PathVariable long userId) throws InterruptedException {
+        log.info("service1 userId: " + userId);
         if (port.equals("8082")) {
             Thread.sleep(7000);
         }

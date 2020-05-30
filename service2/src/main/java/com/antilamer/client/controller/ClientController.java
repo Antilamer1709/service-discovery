@@ -1,6 +1,7 @@
 package com.antilamer.client.controller;
 
 import com.netflix.discovery.EurekaClient;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.io.InputStream;
 
+@Slf4j
 @RestController
 @RequestMapping("v1/service2")
 public class ClientController {
@@ -34,6 +36,7 @@ public class ClientController {
 
     @GetMapping("/{userId}")
     public String getClient(@PathVariable long userId) {
+        log.info("service2 userId: " + userId);
         String url = discoveryClient.getNextServerFromEureka("service1", false).getHomePageUrl();
         String firstClientResponse = restTemplate.getForEntity(url + "/v1/service1/" + userId, String.class).getBody();
 
