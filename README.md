@@ -34,6 +34,10 @@ There are several use cases:
 - call a `v1/service2/{userId}` which gets a `service1` address from a `discoveryClient` (e.g. GET to http://front-gateway:8888/api/service2/v1/service2/123)
 - upload files to `service2` which gets a `service1` address from a `discoveryClient` and passes files to the `service1` to be processed (e.g. POST to http://front-gateway:8888/api/service2/v1/service2/files/upload)
 
+## Zipkin
+To run Zipkin from Docker execute `docker run -d -p 9411:9411 openzipkin/zipkin`
+
+Navigate to the `http://localhost:9411/zipkin/` and search for the desired trace id which you can retrieve from every response in HTTP headers
 
 ## Diagram
 ![](assets/microservices.png)
