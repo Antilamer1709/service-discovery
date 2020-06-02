@@ -37,9 +37,9 @@ public class ClientController {
     @GetMapping("/{userId}")
     public String getClient(@PathVariable long userId) throws InterruptedException {
         log.info("service2 userId: " + userId);
-        Thread.sleep(1500);
         String url = discoveryClient.getNextServerFromEureka("service1", false).getHomePageUrl();
         String firstClientResponse = restTemplate.getForEntity(url + "/v1/service1/" + userId, String.class).getBody();
+        Thread.sleep(1500);
 
         return firstClientResponse + "_____      Service2;    Port: " + port + ";     UserId: " + userId;
     }
