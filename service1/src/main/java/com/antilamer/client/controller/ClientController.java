@@ -21,7 +21,7 @@ public class ClientController {
     public String getClient(@PathVariable long userId) throws InterruptedException {
         log.info("service1 userId: " + userId);
         if (port.equals("8082")) {
-            Thread.sleep(7000);
+            throw new RuntimeException("Error");
         }
         return "Service1;    Port: " + port + ";     UserId: " + userId;
     }
